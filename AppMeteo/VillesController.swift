@@ -18,6 +18,7 @@ class VillesController: UITableViewController, UISearchControllerDelegate, UISea
         search.delegate = self
         search.searchBar.delegate = self
         navigationItem.searchController = search
+        search.searchBar.showsScopeBar = true
     }
 
     @IBOutlet var villes: UITableView!
@@ -47,4 +48,17 @@ extension VillesController {
         return cell
     }
 
+}
+
+extension VillesController {
+    
+    // Suppression d'une cellule
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            print("Cellule supprimée")
+            
+            self.headlines.remove(at: indexPath.row)
+            self.tableView.deleteRows(at: [indexPath], with: .automatic)
+        }
+    }
 }
