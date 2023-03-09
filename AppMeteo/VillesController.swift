@@ -22,6 +22,16 @@ class VillesController: UITableViewController, UISearchControllerDelegate, UISea
 
     @IBOutlet var villes: UITableView!
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Cette fonction s'exécute avant l'enclenchement de la Segue
+        // Permet de préparer les données à envoyer sur la vue destination
+        if segue.identifier == "toMap" {
+            let mapVC = segue.destination as! MapViewController
+            mapVC.latitude = 47.845665
+            mapVC.longitude = 1.939773
+        }
+    }
+    
 }
 
 extension VillesController {

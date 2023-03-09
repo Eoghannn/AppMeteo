@@ -92,6 +92,9 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" id="3iW-AH-pJP"/>
+                    <connections>
+                        <outlet property="map" destination="39R-FS-NHs" id="6IC-1f-8qV"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6ti-4R-Bj2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
